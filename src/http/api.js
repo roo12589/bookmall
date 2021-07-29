@@ -6,5 +6,9 @@ export const loginApi = data => {
     url: "/user/login",
     method: "post",
     data: data
-  })
+  }).then(res=>console.log(res))
 }
+
+// export const testApi = ()=>{
+//   return http.get(`/yan/gc.php`).then(res=>{console.log(res)})
+// }

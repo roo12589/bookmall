@@ -8,12 +8,12 @@
         :rules="rules"
         class="login-form"
       >
-        <el-form-item prop="studentId">
+        <el-form-item prop="username">
           <el-input
-            v-model="loginInfo.studentId"
+            v-model="loginInfo.username"
             placeholder="请输入学号"
-            name="studentId"
-            ref="studentId"
+            name="username"
+            ref="username"
             tabindex="1"
           ></el-input
         ></el-form-item>
@@ -52,13 +52,13 @@ export default {
   name: "Login",
   data() {
     const loginInfo = {
-      studentId: "admin123",
+      username: "test123",
       password: "123123",
     };
     return {
       loginInfo,
       rules: {
-        studentId: [
+        username: [
           {
             required: true,
             trigger: "blur",
@@ -126,7 +126,7 @@ export default {
               // ElMessage.success("登录成功");
               this.$message({ message: "登录成功", type: "success" });
               // 此处admin应替换为userInfo.role
-              localStorage.setItem("ms_studentId", "admin");
+              localStorage.setItem("ms_username", "admin");
             })
             .catch(() => {
               this.loading = false;
